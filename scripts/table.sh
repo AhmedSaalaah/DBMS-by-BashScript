@@ -24,8 +24,7 @@ elif [[ ${sentence[0]} = "insert" && ${sentence[1]} = "into" && ${sentence[3]} =
 then
 	if [[ -f  ${sentence[2]}.csv ]]
 	then
-		. ../../scripts/insertcut.sh
-		echo "Data is Inserted" 
+		. ../../scripts/check.sh
 	else
 		echo "**Table ${sentence[2]} is not found**"
 	fi
