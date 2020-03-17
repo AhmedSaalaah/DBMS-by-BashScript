@@ -16,7 +16,7 @@ then
 	else
 		touch ${sentence[2]}.csv
 		touch ${sentence[2]}.metadata
-		. ../../scripts/word.sh
+. ../../scripts/word.sh
 		echo "Table is Created" 
 	fi
 
@@ -24,7 +24,7 @@ elif [[ ${sentence[0]} = "insert" && ${sentence[1]} = "into" && ${sentence[3]} =
 then
 	if [[ -f  ${sentence[2]}.csv ]]
 	then
-		. ../../scripts/check.sh
+. ../../scripts/check.sh
 	else
 		echo "**Table ${sentence[2]} is not found**"
 	fi
@@ -33,7 +33,7 @@ elif [[ ${sentence[0]} = "select" && ${sentence[1]} = "all" && ${sentence[2]} = 
 then
 	if [[ -f  ${sentence[3]}.csv ]]
 	then
-		. ../../scripts/select.sh
+. ../../scripts/select.sh
 	else
 		echo "**Table ${sentence[3]} is not found**"
 	fi
@@ -48,14 +48,27 @@ then
 	else
 		echo "**Table ${sentence[2]} is not found**"
 	fi
+elif [[ ${sentence[0]} = "update" && ${sentence[2]} = "set" && ${sentence[4]} = "=" && ${sentence[6]} = "where" && ${sentence[8]} = "=" ]]
+then
+	if [[ -f  ${sentence[1]}.csv ]]
+	then
+. ../../scripts/update.sh
+	else
+		echo "**Table ${sentence[2]} is not found**"
+	fi
+elif [[ ${sentence[0]} = "delete" && ${sentence[1]} = "from" && ${sentence[3]} = "where" && ${sentence[5]} = "=" ]]
+then
+	if [[ -f  ${sentence[2]}.csv ]]
+	then
+. ../../scripts/deletefrom.sh
+	else
+		echo "**Table ${sentence[2]} is not found**"
+	fi
 elif [ ${sentence[0]} = "back" ]
 then
 	$clear
-
-elif [ ${sentence[0]} = "back" ]
-then
 	`cd $currnet`
-	. ./main.sh
+. ./main.sh
 
 else
 	echo "**You entered invalid command**"

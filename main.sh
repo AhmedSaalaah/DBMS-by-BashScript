@@ -10,13 +10,13 @@ do
 	do
 		case $varSelection in
 			"Create New DataBase")
-				. ./scripts/create.sh
+. ./scripts/create.sh
 				;;
 			"Connect to DataBase")
-				. ./scripts/connect.sh
+. ./scripts/connect.sh
 				;;
 			"Delete DataBase")
-				. ./scripts/delete.sh
+. ./scripts/delete.sh
 				;;
 			"Exit")
 				varSelection="Exit"
