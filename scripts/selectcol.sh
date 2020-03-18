@@ -5,18 +5,17 @@ input=${sentence[@]}
 	
 	in=`echo $input | awk -F "select" '{print $2}' | awk -F "from" '{print $1}'`
 	inp=($in)
-	for(( i=0 ; i<${#inp[@]} ; ++i ))
-		do 
+	
 			for ((j=0 ; j<${#meta[@]};++j))
 				do 
 				if [[ ${inp[$i]} == ${meta[$j]}  ]]
 				then
 				m=$((1+$j))
-				inp[$i]=$m
+				inp[0]=$m
 				break ;
 				fi
 		             done
-		done
+		
 
 var2=${sentence[5]}
 n=${inp[0]}

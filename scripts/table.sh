@@ -42,7 +42,7 @@ elif [[ ${sentence[0]} = "select" && ${sentence[2]} = "from" && ${sentence[4]} =
 then
 	if [[ -f  ${sentence[3]}.csv ]]
 	then
-. ../../scripts/selectcol.sh
+. ../../scripts/selectcolvalid.sh
 	else
 		echo "**Table ${sentence[3]} is not found**"
 	fi
@@ -60,7 +60,7 @@ elif [[ ${sentence[0]} = "update" && ${sentence[2]} = "set" && ${sentence[4]} = 
 then
 	if [[ -f  ${sentence[1]}.csv ]]
 	then
-. ../../scripts/update.sh
+. ../../scripts/updatevalid.sh
 	else
 		echo "**Table ${sentence[2]} is not found**"
 	fi
@@ -68,7 +68,7 @@ elif [[ ${sentence[0]} = "delete" && ${sentence[1]} = "from" && ${sentence[3]} =
 then
 	if [[ -f  ${sentence[2]}.csv ]]
 	then
-. ../../scripts/deletefrom.sh
+. ../../scripts/deletefromvalid.sh
 	else
 
 		echo "**Table ${sentence[2]} is not found**"
