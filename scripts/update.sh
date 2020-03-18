@@ -13,11 +13,11 @@ input=${sentence[@]}
 				do 
 				if [[ ${inp[$i]} == ${meta[$j]}  ]]
 				then
-				#printf ${inp[$i]}
+				
 				m=$((1+$j))
 				inp[$i]=$m
 				break ;
-				printf ${inp[$i]}	
+					
 				fi
 		             done
 		done
