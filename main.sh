@@ -6,7 +6,7 @@ current=$PWD
 while [ true ]
 do
 `cd $current`
-	select varSelection in "Create New DataBase" "Connect to DataBase" "Delete DataBase" "Exit"
+select varSelection in "Create New DataBase" "Connect to DataBase" "Delete DataBase" "list all database" "Exit"
 	do
 		case $varSelection in
 			"Create New DataBase")
@@ -18,9 +18,12 @@ do
 			"Delete DataBase")
 . ./scripts/delete.sh
 				;;
+			"list all database")
+. ./scripts/listdatabase.sh
+				;;
 			"Exit")
 				varSelection="Exit"
-				break;;
+				break ;;
 		esac
 	done
 	if [ $varSelection = "Exit" ]
