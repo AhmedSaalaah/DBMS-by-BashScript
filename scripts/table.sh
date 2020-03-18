@@ -6,7 +6,7 @@ do
 echo -n "$name:-> "
 read var
 sentence=($var) 
-#echo ${sentence[0]} ${sentence[1]}
+
 if [[ ${sentence[0]} = "create" && ${sentence[1]} = "table" && ${sentence[3]} = "(" && ${sentence[-1]} = ")" ]]
 then
 
@@ -75,7 +75,7 @@ then
 elif [ ${sentence[0]} = "back" ]
 then
 	$clear
-	`cd $currnet`
+	cd ../..
 . ./main.sh
 
 else
