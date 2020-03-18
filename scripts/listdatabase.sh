@@ -6,3 +6,5 @@
 		printf "no databases created till now" 
 
 	fi
+
+. ./main.sh

@@ -70,8 +70,12 @@ then
 	then
 . ../../scripts/deletefrom.sh
 	else
+
 		echo "**Table ${sentence[2]} is not found**"
 	fi
+elif [[ ${sentence[0]} = "list" && ${sentence[1]} = "all" && ${sentence[2]} = "tables"  ]]
+then
+. ../../scripts/listtables.sh
 elif [ ${sentence[0]} = "back" ]
 then
 	$clear
