@@ -27,12 +27,8 @@ else
 printf "there is no column with name  ${sentence[-3]} \n"
 fi
 
-con=`awk -v ve="$m" -F " " ' NR==ve {if ($2 != ""){print $2}}' ${sentence[1]}.metadata`
+con=`awk   -F " " '{if (NR=='$m') {if ($2 != ""){print $2}}}' ${sentence[1]}.metadata`
 val=($con)
-
-printf ${val[0]}
-printf $flag
-
 
 	if [[ ${val[0]} == "text" && $flag == "true" ]]
 		then
@@ -47,7 +43,7 @@ printf $flag
 			fi
 		elif [[ ${val[0]} == "int"  && $flag == "true" && ${inputData2[0]} != '' ]]
 		then
-				printf "in condition3"
+			
 			if [[ ${inputData2[0]} =~ ^[0-9]+$ ]]
 			then
 				flag2="true"
@@ -59,8 +55,6 @@ printf $flag
 			fi
 		
 fi
-
-
 
 if [[ $flag == "true" && $flag2 == "true" ]]
 then

@@ -1,4 +1,6 @@
-  if test -d ./database/
+#!/bin/bash 
+
+ if test -d ./database/
  	then 
 		
 		ls ./database/

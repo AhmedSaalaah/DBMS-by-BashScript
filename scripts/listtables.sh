@@ -1,3 +1,5 @@
+#!/bin/bash
+
 list=`ls`
 l=($list)
 for ((i=0;i<${#l[@]};i++))

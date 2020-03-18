@@ -47,6 +47,15 @@ then
 		echo "**Table ${sentence[3]} is not found**"
 	fi
 
+elif [[ ${sentence[0]} = "select" && ${sentence[2]} = "from" ]]
+then
+	if [[ -f  ${sentence[3]}.csv ]]
+	then
+. ../../scripts/selcolumn.sh
+	else
+		echo "**Table ${sentence[3]} is not found**"
+	fi
+
 elif [[ ${sentence[0]} = "drop" && ${sentence[1]} = "table" ]]
 then
 	if [[ -f  ${sentence[2]}.csv ]]
