@@ -1,12 +1,13 @@
 #!/bin/bash 
 
- if test -d ./database/
- 	then 
-		
+if [[ "$(ls -A ./database/)" ]]
+	then 
 		ls ./database/
 	else
-		printf "no databases created till now" 
-
+		printf "\033[0;93m";
+		echo "There no database available" 
+		printf "\033[0;29m";
+		. ./main.sh
 	fi
 
 . ./main.sh

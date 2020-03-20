@@ -9,12 +9,14 @@ in=`echo "$input" | awk -F "where" '{print $2}' | awk -F "=" '{print $1}'`
 inputData=($in)
 
 flag="false"
+
 if [[ "${sentence[-3]}" == "${Data[0]}"  ]] 
 then
-. ../../scripts/deletefrom.sh 	
+	. ../../scripts/deletefrom.sh 	
 else
-printf "there is no column with name  ${sentence[-3]} \n"
+	printf "\033[0;93m"
+	printf "There is no column with name "
+	printf "\033[0;31m"
+	echo "${sentence[-3]}"
+	printf "\033[0;29m"
 fi
-
-
-

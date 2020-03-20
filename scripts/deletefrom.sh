@@ -1,3 +1,5 @@
+#!/bin/bash
+
 var3="${sentence[-1]}"
 
 Nor=`awk   -F , '{if($1=="'$var3'") {print NR}}'  ${sentence[2]}.csv`
@@ -11,8 +13,8 @@ NN=($Nor)
 
 				done
 
-		else 
-			printf "no data with this value\n"
-
+		else
+			printf "\033[0;93m"
+			echo "There is no data to be deleted"
+			printf "\033[0;29m"
 	fi
-		

@@ -1,2 +1,2 @@
 #!/bin/bash
-awk -F , '{printf "|";for (i=1;i<=NF;i++) {if ($i != "," && $i != ""){printf " "$i" |"}else {printf ""}};print ""}'  ${sentence[3]}.csv
+cat ${sentence[3]}.csv | awk -F "," 'BEGIN{z=0}{if(z==0){printf "\033[0;93m";z++}else{printf "\033[0;29m"};printf "  ";for(i=1;i<=NF;i++){printf $i;printf "\t "};print ""}'
