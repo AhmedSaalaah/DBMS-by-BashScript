@@ -32,8 +32,8 @@ input=${sentence[@]}
 
 if [[ ${sentence[1]} == "all" ]]
 then
-	awk -F "," 'BEGIN{pot=0;select=0}{if(pot==0){printf "\033[0;93m";for(i=1;i<=NF;i++){if($i!=","){printf "  ";printf $i;printf "\t";if($i=="'${sentence[5]}'"){select=i;}}};print "";pot++}else{printf "\033[0;29m"};if($select=="'${sentence[7]}'"){for(i=1;i<=NF;i++){if($i!=","){printf "  ";printf $i;printf "\t"}};print "";}}' ${sentence[3]}.csv
+	awk -F "," 'BEGIN{pot=0;select=0}{if(pot==0){printf "\033[0;93m";for(i=1;i<=NF;i++){if($i!=","){printf "  ";printf $i;printf "\t";if($i=="'${sentence[5]}'"){select=i;}}};print "";pot++};printf "\033[0;29m";if($select=="'${sentence[7]}'"){for(i=1;i<=NF;i++){if($i!=","){printf "  ";printf $i;printf "\t"}};print "";}}' ${sentence[3]}.csv
 elif [[ ${sentence[1]} != "all" ]]
 then
-	awk -F "," 'BEGIN{pot=0;select=0;check=0}{if(pot==0){printf "\033[0;93m";for(i=1;i<NF;i++){if($i!=","&&$i!=""&&$i=="'${sentence[1]}'"){select=i;printf "  ";printf $i;printf "\t"};if($i=="'${sentence[5]}'"){check=i;}};print "";pot++}else{printf "\033[0;29m"};for(i=1;i<NF;i++){if($check=="'${sentence[7]}'"){printf "  ";print $select;}}}' ${sentence[3]}.csv
+	awk -F "," 'BEGIN{pot=0;select=0;check=0}{if(pot==0){printf "\033[0;93m";for(i=1;i<NF;i++){if($i!=","&&$i!=""&&$i=="'${sentence[1]}'"){select=i;printf "  ";printf $i;printf "\t"};if($i=="'${sentence[5]}'"){check=i;}};print "";pot++};printf "\033[0;29m";for(i=1;i<NF;i++){if($check=="'${sentence[7]}'"){printf "  ";print $select;}}}' ${sentence[3]}.csv
 fi

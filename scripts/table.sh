@@ -82,6 +82,17 @@ then
 
 		echo "**Table ${sentence[2]} is not found**"
 	fi
+	
+elif [[ ${sentence[0]} = "delete" && ${sentence[1]} = "from" && ${sentence[3]} != "where" ]]
+then
+	if [[ -f  ${sentence[2]}.csv ]]
+	then
+		. ../../scripts/deletefromvalid.sh
+	else
+
+		echo "**Table ${sentence[2]} is not found**"
+	fi	
+	
 elif [[ ${sentence[0]} = "list" && ${sentence[1]} = "all" && ${sentence[2]} = "tables"  ]]
 then
 	. ../../scripts/listtables.sh
