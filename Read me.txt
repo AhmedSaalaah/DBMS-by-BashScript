@@ -9,16 +9,33 @@
 
 *You should firstly run main ( . ./main.sh ) .
  The database file will created.
+ 
+**Please Take Care when you write the commands and also put the right spaces**
+**Symbol (*) refers to user's input
 
-* To create table . Example : create table databases (  id int,name text,position text )
+* To create table . Example : create table table_name ( column1_name int , column2_name text , ....... columnN_name [text|int] )
 
-* To inseart into table . Example : insert into databases values ( 1,ali,manager  )
+* To drop table . Example : drop table table_name
 
-* To show all data in table . select all from table_name
+* To insert into table . Example : insert into table_name values ( *,*,* )
 
-* To update data in table. Example : update databases set name = mohamed where id = 1
+* To show all data in table . Example : select all from table_name
 
-* To delete data in table. Example : delete from databases where id = 1
+* To show specific column in table . Example : select column_name from table_name
+
+* To show specific data in table . Example : select [column_name|all] from table_name where table_name = *
+
+* To update specific data in table. Example : update table_name set column_name = * where column_name = *
+
+* To delete specific data in table. Example : delete from table_name where column_name = *
+
+* To delete all data in table. Example : delete from table_name
+
+* To list all tables. Example : list all tables
+
+* To back to main screen. Example : back
+
+* To clear the screen. Example : clear
 
 
  
