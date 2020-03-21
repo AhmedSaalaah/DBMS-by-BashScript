@@ -12,6 +12,8 @@ inputData2=($in)
 
 flag2="false"
 flag="false"
+
+ 
 if [[ "${sentence[-3]}" == "${Data[0]}"  ]] 
 then
 	for ((i=0; i<=${#Data[@]};i++))
@@ -58,7 +60,13 @@ fi
 
 if [[ $flag == "true" && $flag2 == "true" ]]
 then
-. ../../scripts/update.sh 
+if [[ "${inputData[0]}" != "${Data[0]}" ]]
+then
+. ../../scripts/update.sh
+else
+printf "this is unique column you cannot edit it \n"
+fi 
 else
         echo "no column with name ${inputData[0]} or data not valid  "
 fi
+
