@@ -8,7 +8,7 @@
 ##steps to use this databases :
 
 *You should firstly run main ( . ./main.sh ) .
- The database file will created.
+ The database file will be created.
  
 **Please Take Care when you write the commands and also put the right spaces**
 **Symbol (*) refers to user's input
@@ -37,8 +37,6 @@
 
 * To clear the screen. Example : clear
 
-
- 
 
 
 ##This databases implemented by:
