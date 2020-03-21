@@ -1,0 +1,34 @@
+##general information
+
+ Implementing a simple databases management system using Bash Shell scripting.
+ 
+ 
+
+
+##steps to use this databases :
+
+*You should firstly run main ( . ./main.sh ) .
+ The database file will created.
+
+* To create table . Example : create table databases (  id int,name text,position text )
+
+* To inseart into table . Example : insert into databases values ( 1,ali,manager  )
+
+* To show all data in table . select all from table_name
+
+* To update data in table. Example : update databases set name = mohamed where id = 1
+
+* To delete data in table. Example : delete from databases where id = 1
+
+
+ 
+
+
+##This databases implemented by:
+
+Amr Walid Adel
+mostafa mohamed rashad rawwy
+Ahmed Salah Shafik
+
+
+Students of the open source Telecom App. development track @ ITI.
