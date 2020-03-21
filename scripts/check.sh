@@ -32,16 +32,23 @@ then
 				flag="false"
 			fi
 		fi
-
 	done
 else
 	flag="false"
 fi
 
-if [[ $flag == "true" ]]
+pkCheck=`awk -F "," 'BEGIN{pot=0}{if(pot==0){pot++;}else{if($1=="'${inputData[0]}'"){print "falsePK"}}}' ./${sentence[2]}.csv`
+
+if [[ $flag == "true" && $pkCheck != "falsePK" ]]
 then
 	. ../../scripts/insertcut.sh
-	echo "Data is Inserted" 
-else
+	echo "Data is Inserted"
+elif [[ $flag == "false" ]]
+then
         echo "Not the same number of coloumns"
+fi
+
+if [[ $pkCheck == "falsePK" ]]
+then
+	echo "Data in Column ${inputData[0]} must be Unique"
 fi
