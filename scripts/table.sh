@@ -16,7 +16,7 @@ then
 	else
 		touch ${sentence[2]}.csv
 		touch ${sentence[2]}.metadata
-		. ../../scripts/word.sh
+. ../../scripts/word.sh
 		echo "Table is Created" 
 	fi
 
@@ -24,7 +24,7 @@ elif [[ ${sentence[0]} = "insert" && ${sentence[1]} = "into" && ${sentence[3]} =
 then
 	if [[ -f  ${sentence[2]}.csv ]]
 	then
-		. ../../scripts/check.sh
+. ../../scripts/check.sh
 	else
 		echo "**Table ${sentence[2]} is not found**"
 	fi
@@ -33,7 +33,7 @@ elif [[ ${sentence[0]} = "select" && ${sentence[1]} = "all" && ${sentence[2]} = 
 then
 	if [[ -f  ${sentence[3]}.csv ]]
 	then
-		. ../../scripts/select.sh
+. ../../scripts/select.sh
 	else
 		echo "**Table ${sentence[3]} is not found**"
 	fi
@@ -42,7 +42,7 @@ elif [[ ${sentence[0]} = "select" && ${sentence[2]} = "from" && ${sentence[4]} =
 then
 	if [[ -f  ${sentence[3]}.csv ]]
 	then
-		. ../../scripts/selectcolvalid.sh
+. ../../scripts/selectcolvalid.sh
 	else
 		echo "**Table ${sentence[3]} is not found**"
 	fi
@@ -51,7 +51,7 @@ elif [[ ${sentence[0]} = "select" && ${sentence[2]} = "from" ]]
 then
 	if [[ -f  ${sentence[3]}.csv ]]
 	then
-		. ../../scripts/selcolumn.sh
+. ../../scripts/selcolumn.sh
 	else
 		echo "**Table ${sentence[3]} is not found**"
 	fi
@@ -69,15 +69,24 @@ elif [[ ${sentence[0]} = "update" && ${sentence[2]} = "set" && ${sentence[4]} = 
 then
 	if [[ -f  ${sentence[1]}.csv ]]
 	then
-		. ../../scripts/updatevalid.sh
+. ../../scripts/updatevalid.sh
 	else
 		echo "**Table ${sentence[2]} is not found**"
 	fi
+elif [[ ${sentence[0]} = "update" && ${sentence[2]} = "set" && ${sentence[4]} = "=" ]]
+then
+	if [[ -f  ${sentence[1]}.csv ]]
+	then
+. ../../scripts/updateall.sh
+	else
+		echo "**Table ${sentence[2]} is not found**"
+	fi
+
 elif [[ ${sentence[0]} = "delete" && ${sentence[1]} = "from" && ${sentence[3]} = "where" && ${sentence[5]} = "=" ]]
 then
 	if [[ -f  ${sentence[2]}.csv ]]
 	then
-		. ../../scripts/deletefromvalid.sh
+. ../../scripts/deletefromvalid.sh
 	else
 
 		echo "**Table ${sentence[2]} is not found**"
@@ -87,30 +96,21 @@ elif [[ ${sentence[0]} = "delete" && ${sentence[1]} = "from" && ${sentence[3]} !
 then
 	if [[ -f  ${sentence[2]}.csv ]]
 	then
-		. ../../scripts/deletefromvalid.sh
+. ../../scripts/deletefromvalid.sh
 	else
 
 		echo "**Table ${sentence[2]} is not found**"
 	fi	
 	
-elif [[ ${sentence[0]} = "list" && ${sentence[1]} = "all" && ${sentence[2]} = "tables" ]]
+elif [[ ${sentence[0]} = "list" && ${sentence[1]} = "all" && ${sentence[2]} = "tables"  ]]
 then
-	. ../../scripts/listtables.sh
-	
-elif [[ ${sentence[0]} = "help" ]]
-then
-	printf "\033c"
-	. ../../scripts/help.sh	
-	echo "========================"
-	echo "Please Enter Any Key To Continue"
-	read
-	printf "\033c"
+. ../../scripts/listtables.sh
 
 elif [ ${sentence[0]} = "back" ]
 then
 	printf "\033c"
 	cd ../..
-	. ./main.sh
+. ./main.sh
 
 elif [ ${sentence[0]} = "clear" ]
 then
