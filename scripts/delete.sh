@@ -1,14 +1,16 @@
 #!/bin/bash
 
-printf "Enter name of database \n"
+echo -n "Enter name of database:-> "
 read name
 if test -d ./database/$name
 then
         rm -rf ./database/$name
-        printf "Database is Deleted Successfull \n"
-        . ./main.sh
+	printf "\033[0;93m"        
+        echo "Database is Deleted Successfull "
+	printf "\033[0;29m"   
 else
-	printf "Database doesn't exist"
-	. ./main.sh
+	printf "\033[0;93m"	
+	echo "Database doesn't exist"
+	printf "\033[0;29m"	
 fi
-
+`cd $current`
