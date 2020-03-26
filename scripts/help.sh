@@ -17,6 +17,8 @@ echo "* To show specific data in table . Example : select [column_name|all] from
 
 echo "* To update specific data in table . Example : update table_name set column_name = * where column_name = *"
 
+echo "* To update specific data in table . Example : update table_name set column_name = *"
+
 echo "* To delete specific data in table . Example : delete from table_name where column_name = *"
 
 echo "* To delete all data in table . Example : delete from table_name"

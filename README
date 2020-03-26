@@ -27,6 +27,8 @@
 
 * To update specific data in table. Example : update table_name set column_name = * where column_name = *
 
+* To update specific data in table. Example : update table_name set column_name = *
+
 * To delete specific data in table. Example : delete from table_name where column_name = *
 
 * To delete all data in table. Example : delete from table_name
